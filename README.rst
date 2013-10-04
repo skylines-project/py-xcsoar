@@ -4,6 +4,35 @@ py-xcsoar
 XCSoar flight analysis tools
 
 
+Contents
+--------
+
+AnalyseFlight
+  The AnalyseFlight tool will run an IGC file through the XCSoar flight
+  analysis engine and return the results in JSON format. It expects the path
+  to the IGC file as a command line parameter and returns its output on stdout.
+
+FlightPath
+  The FlightPath utility reads an IGC file and extracts the relevant
+  information into an easily parsable format including the seconds since
+  midnight, location, altitude and engine noise level. Like AnalyseFlight it
+  also expects the IGC filename on the command line and returns its output on
+  stdout.
+
+
+Installation
+------------
+
+You can install the XCSoar tools like any other python script by calling
+``python setup.py install``. It will automatically compile the tools and
+install them to an appropriate location.
+
+You will most likely need to install a few of XCSoar's build dependencies.
+On a standard Ubuntu machine calling ``apt-get install make
+libcurl4-openssl-dev`` should get you started. Please read the XCSoar
+documentation if there are more libraries missing.
+
+
 License
 -------
 
