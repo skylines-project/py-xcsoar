@@ -1,29 +1,29 @@
 # metadata
 include README.rst
-include xcsoar/AUTHORS
-include xcsoar/COPYING
-include xcsoar/README
-include xcsoar/VERSION.txt
+include xcsoar.submodule/AUTHORS
+include xcsoar.submodule/COPYING
+include xcsoar.submodule/README
+include xcsoar.submodule/VERSION.txt
 
 # build scripts
-include xcsoar/Makefile
-graft xcsoar/build
+include xcsoar.submodule/Makefile
+graft xcsoar.submodule/build
 
 # source files
-graft xcsoar/src
-prune xcsoar/src/Android
-prune xcsoar/src/Dialogs
-prune xcsoar/src/Form
-prune xcsoar/src/Gauge
-prune xcsoar/src/InfoBoxes
-prune xcsoar/src/Input
-prune xcsoar/src/Java
-prune xcsoar/src/Kobo
-prune xcsoar/src/Look
-prune xcsoar/src/MapWindow
-prune xcsoar/src/Renderer
-prune xcsoar/src/Screen
-prune xcsoar/src/UIUtil
-prune xcsoar/src/Widget
-graft xcsoar/test/src
-include xcsoar/tools/GenerateSineTables.cpp
+graft xcsoar.submodule/src
+prune xcsoar.submodule/src/Android
+prune xcsoar.submodule/src/Dialogs
+prune xcsoar.submodule/src/Form
+prune xcsoar.submodule/src/Gauge
+prune xcsoar.submodule/src/InfoBoxes
+prune xcsoar.submodule/src/Input
+prune xcsoar.submodule/src/Java
+prune xcsoar.submodule/src/Kobo
+prune xcsoar.submodule/src/Look
+prune xcsoar.submodule/src/MapWindow
+prune xcsoar.submodule/src/Renderer
+prune xcsoar.submodule/src/Screen
+prune xcsoar.submodule/src/UIUtil
+prune xcsoar.submodule/src/Widget
+graft xcsoar.submodule/test/src
+include xcsoar.submodule/tools/GenerateSineTables.cpp

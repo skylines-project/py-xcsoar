@@ -7,7 +7,7 @@ from distutils.command.build import build
 from subprocess import call
 
 BASEPATH = os.path.dirname(os.path.abspath(__file__))
-XCSOAR_PATH = os.path.join(BASEPATH, 'xcsoar')
+XCSOAR_PATH = os.path.join(BASEPATH, 'xcsoar.submodule')
 
 
 class build_xcsoar(build):
