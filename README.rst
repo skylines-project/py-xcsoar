@@ -19,6 +19,11 @@ FlightPath
   also expects the IGC filename on the command line and returns its output on
   stdout.
 
+XCSoar python package
+  The XCSoar python package contains python wrapper for the above utilities.
+  Import the ``xcsoar`` package to take advantage of the ``flight_path`` and
+  ``analyse_flight`` functions.
+
 
 Installation
 ------------
