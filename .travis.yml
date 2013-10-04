@@ -1,0 +1,21 @@
+language: python
+
+python:
+  - 2.7
+
+install:
+  # Install build dependencies
+  - sudo apt-get update
+  - sudo apt-get install libcurl4-openssl-dev
+
+script:
+  # Try to install the package
+  - pip install .
+
+  # See if the tools got installed properly
+  - which AnalyseFlight
+  - which FlightPath
+
+notifications:
+  email:
+    on_failure: change
