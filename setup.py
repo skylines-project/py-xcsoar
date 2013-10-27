@@ -5,6 +5,7 @@ from setuptools import setup
 from setuptools.command.install import install
 from distutils.command.build import build
 from subprocess import call
+from multiprocessing import cpu_count
 
 BASEPATH = os.path.dirname(os.path.abspath(__file__))
 XCSOAR_PATH = os.path.join(BASEPATH, 'xcsoar.submodule')
@@ -25,6 +26,11 @@ class build_xcsoar(build):
             'OUT=' + build_path,
             'V=' + str(self.verbose),
         ]
+
+        try:
+            cmd.append('-j%d' % cpu_count())
+        except NotImplementedError:
+            print 'Unable to determine number of CPUs. Using single threaded make.'
 
         options = [
             'DEBUG=n',
@@ -77,7 +83,7 @@ def read(fname):
 
 setup(
     name='xcsoar',
-    version='0.1',
+    version='0.1.1',
     description='XCSoar flight analysis tools',
     maintainer='Tobias Bieniek',
     maintainer_email='tobias.bieniek@gmx.de',
