@@ -12,9 +12,8 @@ script:
   # Try to install the package
   - pip install .
 
-  # See if the tools got installed properly
-  - which AnalyseFlight
-  - which FlightPath
+  # See if the module got installed properly
+  - python -c 'import xcsoar'
 
 notifications:
   email:

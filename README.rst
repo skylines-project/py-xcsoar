@@ -7,22 +7,13 @@ XCSoar flight analysis tools
 Contents
 --------
 
-AnalyseFlight
-  The AnalyseFlight tool will run an IGC file through the XCSoar flight
-  analysis engine and return the results in JSON format. It expects the path
-  to the IGC file as a command line parameter and returns its output on stdout.
-
-FlightPath
-  The FlightPath utility reads an IGC file and extracts the relevant
-  information into an easily parsable format including the seconds since
-  midnight, location, altitude and engine noise level. Like AnalyseFlight it
-  also expects the IGC filename on the command line and returns its output on
-  stdout.
-
 XCSoar python package
-  The XCSoar python package contains python wrapper for the above utilities.
-  Import the ``xcsoar`` package to take advantage of the ``flight_path`` and
-  ``analyse_flight`` functions.
+  The XCSoar python package contains a wrapper for compiling the xcsoar python
+  module.
+
+  Import the ``xcsoar`` package to take advantage of the module. See the
+  source code and the test_xcsoar.py script in the
+  ``xcsoar.submodule/python/test/`` directory.
 
 
 Installation

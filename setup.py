@@ -38,11 +38,10 @@ class build_xcsoar(build):
         ]
         cmd.extend(options)
 
-        targets = [
-            os.path.join(build_path, 'UNIX/bin/AnalyseFlight'),
-            os.path.join(build_path, 'UNIX/bin/FlightPath'),
-        ]
+        targets = ['python']
         cmd.extend(targets)
+
+        target_files = [os.path.join(build_path, 'UNIX_PYTHON/bin/xcsoar.so')]
 
         def compile():
             print '*' * 80
@@ -51,12 +50,12 @@ class build_xcsoar(build):
 
         self.execute(compile, [], 'compiling xcsoar')
 
-        # copy resulting tool to scripts build folder
-        self.mkpath(self.build_scripts)
+        # copy resulting tool to library build folder
+        self.mkpath(self.build_lib)
 
         if not self.dry_run:
-            for target in targets:
-                self.copy_file(target, self.build_scripts)
+            for target in target_files:
+                self.copy_file(target, self.build_lib)
 
 
 class install_xcsoar(install):
@@ -74,7 +73,7 @@ class install_xcsoar(install):
 
         # install XCSoar executables
         print 'running install_xcsoar'
-        self.copy_tree(self.build_scripts, self.install_scripts)
+        self.copy_tree(self.build_lib, self.install_lib)
 
 
 def read(fname):
@@ -83,7 +82,7 @@ def read(fname):
 
 setup(
     name='xcsoar',
-    version='0.1.1',
+    version='0.2',
     description='XCSoar flight analysis tools',
     maintainer='Tobias Bieniek',
     maintainer_email='tobias.bieniek@gmx.de',
