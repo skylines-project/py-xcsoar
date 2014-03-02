@@ -25,5 +25,6 @@ prune xcsoar.submodule/src/Renderer
 prune xcsoar.submodule/src/Screen
 prune xcsoar.submodule/src/UIUtil
 prune xcsoar.submodule/src/Widget
+graft xcsoar.submodule/python
 graft xcsoar.submodule/test/src
 include xcsoar.submodule/tools/GenerateSineTables.cpp
