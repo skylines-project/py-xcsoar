@@ -99,8 +99,6 @@ setup(
         'Topic :: Scientific/Engineering :: Information Analysis',
     ],
 
-    packages=['xcsoar'],
-
     cmdclass={
         'build': build_xcsoar,
         'install': install_xcsoar,
