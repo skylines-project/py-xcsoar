@@ -27,4 +27,5 @@ prune xcsoar.submodule/src/UIUtil
 prune xcsoar.submodule/src/Widget
 graft xcsoar.submodule/python
 graft xcsoar.submodule/test/src
+graft xcsoar.submodule/lib/boost
 include xcsoar.submodule/tools/GenerateSineTables.cpp

@@ -1,6 +1,14 @@
 CHANGELOG
 =========
 
+0.3
+-----
+
+- update XCSoar source to the latest 6.8 development version
+
+- add QNH processing
+
+
 0.2.1
 -----
 
