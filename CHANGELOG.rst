@@ -1,6 +1,12 @@
 CHANGELOG
 =========
 
+0.4
+---
+
+Add interface to XCSoar's airspace warning code.
+
+
 0.3
 -----
 
