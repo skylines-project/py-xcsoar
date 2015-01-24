@@ -5,7 +5,9 @@ CHANGELOG
 -----
 
 Update xcsoar source to latest 6.8 development version:
+
 - adding RMZ airspaces
+
 - fixing a endless loop bug in the replay code
 
 
