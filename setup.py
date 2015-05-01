@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 
 import os
+from sys import platform
 from setuptools import setup
 from setuptools.command.install import install
 from distutils.command.build import build
@@ -41,7 +42,12 @@ class build_xcsoar(build):
         targets = ['python']
         cmd.extend(targets)
 
-        target_files = [os.path.join(build_path, 'UNIX_PYTHON/bin/xcsoar.so')]
+        if platform == 'darwin':
+            target_path = 'OSX64_PYTHON'
+        else:
+            target_path = 'UNIX_PYTHON'
+
+        target_files = [os.path.join(build_path, target_path, 'bin', 'xcsoar.so')]
 
         def compile():
             print '*' * 80
