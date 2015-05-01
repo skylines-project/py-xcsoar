@@ -18,8 +18,6 @@ class build_xcsoar(build):
         build.run(self)
 
         # build XCSoar
-        print 'running build_xcsoar'
-
         build_path = os.path.abspath(self.build_temp)
 
         cmd = [
@@ -50,11 +48,9 @@ class build_xcsoar(build):
         target_files = [os.path.join(build_path, target_path, 'bin', 'xcsoar.so')]
 
         def compile():
-            print '*' * 80
             call(cmd, cwd=XCSOAR_PATH)
-            print '*' * 80
 
-        self.execute(compile, [], 'compiling xcsoar')
+        self.execute(compile, [], 'Compiling xcsoar')
 
         # copy resulting tool to library build folder
         self.mkpath(self.build_lib)
@@ -78,7 +74,6 @@ class install_xcsoar(install):
         install.run(self)
 
         # install XCSoar executables
-        print 'running install_xcsoar'
         self.copy_tree(self.build_lib, self.install_lib)
 
 
