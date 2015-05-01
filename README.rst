@@ -1,6 +1,12 @@
 py-xcsoar
 =========
 
+.. image:: https://img.shields.io/travis/Turbo87/py-xcsoar.svg
+  :target: https://travis-ci.org/Turbo87/py-xcsoar
+
+.. image:: https://img.shields.io/pypi/v/xcsoar.svg
+  :target: https://pypi.python.org/pypi/xcsoar
+  
 XCSoar flight analysis tools
 
 
