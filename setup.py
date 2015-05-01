@@ -12,7 +12,7 @@ BASEPATH = os.path.dirname(os.path.abspath(__file__))
 XCSOAR_PATH = os.path.join(BASEPATH, 'xcsoar.submodule')
 
 
-class build_xcsoar(build):
+class XCSoarBuild(build):
     def run(self):
         # run original build code
         build.run(self)
@@ -60,7 +60,7 @@ class build_xcsoar(build):
                 self.copy_file(target, self.build_lib)
 
 
-class install_xcsoar(install):
+class XCSoarInstall(install):
     def initialize_options(self):
         install.initialize_options(self)
         self.build_scripts = None
@@ -101,7 +101,7 @@ setup(
     ],
 
     cmdclass={
-        'build': build_xcsoar,
-        'install': install_xcsoar,
+        'build': XCSoarBuild,
+        'install': XCSoarInstall,
     }
 )
