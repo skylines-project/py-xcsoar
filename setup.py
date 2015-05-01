@@ -59,11 +59,11 @@ class build_xcsoar(build):
 
 
 class install_xcsoar(install):
-    def initialize_options (self):
+    def initialize_options(self):
         install.initialize_options(self)
         self.build_scripts = None
 
-    def finalize_options (self):
+    def finalize_options(self):
         install.finalize_options(self)
         self.set_undefined_options('build', ('build_scripts', 'build_scripts'))
 
