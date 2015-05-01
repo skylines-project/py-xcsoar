@@ -1,6 +1,12 @@
 CHANGELOG
 =========
 
+0.4.2
+-----
+
+- Fix installation on Mac OSX
+
+
 0.4.1
 -----
 
