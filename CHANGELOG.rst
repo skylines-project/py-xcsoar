@@ -1,6 +1,12 @@
 CHANGELOG
 =========
 
+0.5
+---
+
+Use XCSoar 6.8.2 codebase.
+
+
 0.4.2
 -----
 
