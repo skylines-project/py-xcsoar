@@ -88,3 +88,13 @@ def test_path_of_path():
     assert fix.siu == 10
     assert fix.elevation == None
     assert fix.level == 0
+
+
+def test_reduce():
+    from xcsoar import Flight
+
+    flight = Flight(join(FIXTURES_PATH, '654g6ng1.igc'))
+    assert len(flight.path()) == 9762
+
+    flight.reduce(threshold=0, max_points=5000)
+    assert len(flight.path()) < 5000
