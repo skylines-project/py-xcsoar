@@ -22,7 +22,7 @@ Fix = namedtuple('Fix', [
 ])
 
 
-def test_something():
+def test_path():
     from xcsoar import Flight
 
     flight = Flight(join(FIXTURES_PATH, '654g6ng1.igc'))
