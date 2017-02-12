@@ -44,3 +44,19 @@ def test_path():
     assert second_fix.siu == 8
     assert second_fix.elevation == None
     assert second_fix.level == 0
+
+    other_fix = Fix(*path[4321])
+    assert other_fix.datetime.isoformat() == '2016-05-04T12:59:46'
+    assert other_fix.clock == 46786
+    assert other_fix.location['latitude'] == approx(49.510716666681944)
+    assert other_fix.location['longitude'] == approx(9.105166666669477)
+    assert other_fix.gps_altitude == 2050
+    assert other_fix.pressure_altitude == 1913
+    assert other_fix.enl == None
+    assert other_fix.trt == 19
+    assert other_fix.gsp == 143
+    assert other_fix.tas == None
+    assert other_fix.ias == None
+    assert other_fix.siu == 10
+    assert other_fix.elevation == None
+    assert other_fix.level == 0
