@@ -60,3 +60,31 @@ def test_path():
     assert other_fix.siu == 10
     assert other_fix.elevation == None
     assert other_fix.level == 0
+
+
+def test_path_of_path():
+    from xcsoar import Flight
+
+    flight = Flight(join(FIXTURES_PATH, '654g6ng1.igc'))
+    path = flight.path()
+    assert len(path) == 9762
+
+    flight2 = Flight(path)
+    path2 = flight2.path()
+    assert len(path2) == 9762
+
+    fix = Fix(*path2[4321])
+    assert fix.datetime.isoformat() == '2016-05-04T12:59:46'
+    assert fix.clock == 46786
+    assert fix.location['latitude'] == approx(49.510716666681944)
+    assert fix.location['longitude'] == approx(9.105166666669477)
+    assert fix.gps_altitude == 2050
+    assert fix.pressure_altitude == 1913
+    assert fix.enl == None
+    assert fix.trt == 19
+    assert fix.gsp == 143
+    assert fix.tas == None
+    assert fix.ias == None
+    assert fix.siu == 10
+    assert fix.elevation == None
+    assert fix.level == 0
