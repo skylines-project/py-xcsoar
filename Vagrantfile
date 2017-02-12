@@ -34,8 +34,8 @@ sudo -H python get-pip.py
 SCRIPT
 
 Vagrant.configure("2") do |config|
-  config.vm.box = 'ubuntu-12.04.2-x86_64'
-  config.vm.box_url = 'http://puppet-vagrant-boxes.puppetlabs.com/ubuntu-server-12042-x64-vbox4210.box'
+  # TravisCI uses a Precise Pangolin base image
+  config.vm.box = 'ubuntu/precise64'
 
   config.vm.network 'private_network', type: 'dhcp'
   config.vm.synced_folder '.', '/vagrant', type: 'nfs'
