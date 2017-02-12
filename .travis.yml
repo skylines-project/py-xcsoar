@@ -10,6 +10,9 @@ addons:
     packages:
       - libcurl4-openssl-dev
 
+install:
+  - pip install -r requirements.txt
+
 before_script:
   - git submodule update --init --recursive
 
@@ -17,8 +20,8 @@ script:
   # Try to install the package
   - pip install .
 
-  # See if the module got installed properly
-  - python -c 'import xcsoar'
+  # Run tests
+  - pytest -vv
 
 notifications:
   email:
