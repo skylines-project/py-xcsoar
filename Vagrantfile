@@ -31,6 +31,10 @@ sudo apt-get install -y --no-install-recommends \
 wget -N -nv https://bootstrap.pypa.io/get-pip.py
 sudo -H python get-pip.py
 
+# install dev dependencies
+
+pip install -r requirements.txt
+
 SCRIPT
 
 Vagrant.configure("2") do |config|
