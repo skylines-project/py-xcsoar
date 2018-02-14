@@ -1,5 +1,7 @@
 #!/usr/bin/env python
 
+from __future__ import print_function
+
 import os
 from sys import platform
 from setuptools import setup
@@ -29,7 +31,7 @@ class XCSoarBuild(build):
         try:
             cmd.append('-j%d' % cpu_count())
         except NotImplementedError:
-            print 'Unable to determine number of CPUs. Using single threaded make.'
+            print('Unable to determine number of CPUs. Using single threaded make.')
 
         options = [
             'DEBUG=n',
