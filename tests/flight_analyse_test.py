@@ -1,6 +1,5 @@
 from os.path import dirname, abspath, join
 from datetime import datetime
-from sets import Set
 
 import pytest
 from pytest import approx
@@ -18,7 +17,7 @@ def test_performance_and_phases():
     landing_time = times[0]['landing']['time']
 
     result = flight.analyse(takeoff_time, None, None, landing_time)
-    assert Set(result.keys()) == Set(['performance', 'phases', 'contests', 'qnh', 'wind'])
+    assert set(result.keys()) == set(['performance', 'phases', 'contests', 'qnh', 'wind'])
     assert result['performance'] == {
         'circling_total': {
             'duration': 14472,
@@ -1810,7 +1809,7 @@ def test_contests():
     landing_time = times[0]['landing']['time']
 
     result = flight.analyse(takeoff_time, takeoff_time, landing_time, landing_time)
-    assert Set(result.keys()) == Set(['performance', 'phases', 'contests', 'qnh', 'wind'])
+    assert set(result.keys()) == set(['performance', 'phases', 'contests', 'qnh', 'wind'])
     assert result['contests'] == {
         'dmst': {
             'quadrilateral': {
