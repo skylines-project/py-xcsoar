@@ -35,4 +35,5 @@ deploy:
     secure: EoZBUYwOumozqjqZ0ODDUfywSF+kSxUeIEVQNzjKjWdbzdwzD9tBi3uEGed6+CkZr9R/5arc/YAjCt/1zuKfdgOD6Mh6VxgkcPoaBkfF0nsTKwgNzN29BEU4P1V7nWpILy7JPC80K0fCvH2UwGlmB79oMFuLu74vcf2MhTKA40E=
   on:
     tags: true
+    distributions: sdist bdist_wheel
     repo: skylines-project/py-xcsoar
