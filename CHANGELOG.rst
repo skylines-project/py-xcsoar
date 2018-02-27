@@ -1,6 +1,12 @@
 CHANGELOG
 =========
 
+0.6.1
+-----
+
+- Adjusted wheel distribution
+
+
 0.6
 ---
 
