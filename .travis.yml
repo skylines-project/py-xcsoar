@@ -32,7 +32,8 @@ deploy:
   provider: pypi
   user: Tobias.Bieniek
   password:
-    secure: a7VeLjfa5BqojsRNa+RLu8YaagM1FFEzfuovLYnUxd0EC+6060VZyXBp06wINpqntDYPl4qfdNjZcAWsoSh02apjWYCw9LiRkRB5FlygulTFyUbc/qW5Ol/NzkQP2jpMW82eehE7wroj9Dfwp0zU4WDgUugPmDQxtpHRSR+34mA=
+    secure: EoZBUYwOumozqjqZ0ODDUfywSF+kSxUeIEVQNzjKjWdbzdwzD9tBi3uEGed6+CkZr9R/5arc/YAjCt/1zuKfdgOD6Mh6VxgkcPoaBkfF0nsTKwgNzN29BEU4P1V7nWpILy7JPC80K0fCvH2UwGlmB79oMFuLu74vcf2MhTKA40E=
   on:
     tags: true
-    repo: Turbo87/py-xcsoar
+    distributions: sdist bdist_wheel
+    repo: skylines-project/py-xcsoar
