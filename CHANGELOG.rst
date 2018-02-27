@@ -1,6 +1,12 @@
 CHANGELOG
 =========
 
+0.6
+---
+
+- Add Python 3 support
+
+
 0.5
 ---
 
