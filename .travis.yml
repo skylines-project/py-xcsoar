@@ -1,28 +1,34 @@
-language: python
-
-python:
-  - "2.7"
-  - "3.4"
-
+dist: trusty
 sudo: false
 
-addons:
+jobs:
+  include:
+    - &test
+      stage: test
+
+      language: python
+      python: 2.7
+
+      addons:
   apt:
     packages:
       - libcurl4-openssl-dev
 
-install:
+      install:
   - pip install -r requirements.txt
 
-before_script:
+      before_script:
   - git submodule update --init --recursive
 
-script:
+      script:
   # Try to install the package
   - pip install .
 
   # Run tests
   - pytest -vv
+
+    - <<: *test
+      python: 3.4
 
 notifications:
   email:
