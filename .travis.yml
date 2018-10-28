@@ -1,6 +1,10 @@
 dist: trusty
 sudo: false
 
+branches:
+  except:
+    - /^dependabot\/.*$/
+
 jobs:
   include:
     - &test
@@ -10,22 +14,22 @@ jobs:
       python: 2.7
 
       addons:
-  apt:
-    packages:
-      - libcurl4-openssl-dev
+        apt:
+          packages:
+            - libcurl4-openssl-dev
 
       install:
-  - pip install -r requirements.txt
+        - pip install -r requirements.txt
 
       before_script:
-  - git submodule update --init --recursive
+        - git submodule update --init --recursive
 
       script:
-  # Try to install the package
-  - pip install .
+        # Try to install the package
+        - pip install .
 
-  # Run tests
-  - pytest -vv
+        # Run tests
+        - pytest -vv
 
     - <<: *test
       python: 3.4
