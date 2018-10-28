@@ -35,7 +35,8 @@ sudo -H python get-pip.py
 
 # install dev dependencies
 
-pip install -r requirements.txt
+cd /vagrant
+sudo -H pip install -r requirements.txt
 
 SCRIPT
 
