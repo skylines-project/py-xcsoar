@@ -11,7 +11,7 @@ from subprocess import call
 from multiprocessing import cpu_count
 
 BASEPATH = os.path.dirname(os.path.abspath(__file__))
-XCSOAR_PATH = os.path.join(BASEPATH, 'xcsoar.submodule')
+XCSOAR_PATH = os.path.join(BASEPATH, "xcsoar.submodule")
 
 
 class XCSoarBuild(build):
@@ -22,37 +22,30 @@ class XCSoarBuild(build):
         # build XCSoar
         build_path = os.path.abspath(self.build_temp)
 
-        cmd = [
-            'make',
-            'OUT=' + build_path,
-            'V=' + str(self.verbose),
-        ]
+        cmd = ["make", "OUT=" + build_path, "V=" + str(self.verbose)]
 
         try:
-            cmd.append('-j%d' % cpu_count())
+            cmd.append("-j%d" % cpu_count())
         except NotImplementedError:
-            print('Unable to determine number of CPUs. Using single threaded make.')
+            print("Unable to determine number of CPUs. Using single threaded make.")
 
-        options = [
-            'DEBUG=n',
-            'ENABLE_SDL=n',
-        ]
+        options = ["DEBUG=n", "ENABLE_SDL=n"]
         cmd.extend(options)
 
-        targets = ['python']
+        targets = ["python"]
         cmd.extend(targets)
 
-        if platform == 'darwin':
-            target_path = 'OSX64_PYTHON'
+        if platform == "darwin":
+            target_path = "OSX64_PYTHON"
         else:
-            target_path = 'UNIX_PYTHON'
+            target_path = "UNIX_PYTHON"
 
-        target_files = [os.path.join(build_path, target_path, 'bin', 'xcsoar.so')]
+        target_files = [os.path.join(build_path, target_path, "bin", "xcsoar.so")]
 
         def compile():
             call(cmd, cwd=XCSOAR_PATH)
 
-        self.execute(compile, [], 'Compiling xcsoar')
+        self.execute(compile, [], "Compiling xcsoar")
 
         # copy resulting tool to library build folder
         self.mkpath(self.build_lib)
@@ -69,7 +62,7 @@ class XCSoarInstall(install):
 
     def finalize_options(self):
         install.finalize_options(self)
-        self.set_undefined_options('build', ('build_scripts', 'build_scripts'))
+        self.set_undefined_options("build", ("build_scripts", "build_scripts"))
 
     def run(self):
         # run original install code
@@ -84,26 +77,22 @@ def read(fname):
 
 
 setup(
-    name='xcsoar',
-    version='0.6.1',
-    description='XCSoar flight analysis tools',
-    maintainer='Tobias Bieniek',
-    maintainer_email='tobias.bieniek@gmx.de',
-    license='GPLv2',
-    url='http://www.xcsoar.org/',
-    long_description=read('README.rst'),
+    name="xcsoar",
+    version="0.6.1",
+    description="XCSoar flight analysis tools",
+    maintainer="Tobias Bieniek",
+    maintainer_email="tobias.bieniek@gmx.de",
+    license="GPLv2",
+    url="http://www.xcsoar.org/",
+    long_description=read("README.rst"),
     classifiers=[
-        'Development Status :: 3 - Alpha',
-        'Intended Audience :: Developers',
-        'Intended Audience :: Science/Research',
-        'License :: OSI Approved :: GNU General Public License v2 (GPLv2)',
-        'Operating System :: Unix',
-        'Programming Language :: C++',
-        'Topic :: Scientific/Engineering :: Information Analysis',
+        "Development Status :: 3 - Alpha",
+        "Intended Audience :: Developers",
+        "Intended Audience :: Science/Research",
+        "License :: OSI Approved :: GNU General Public License v2 (GPLv2)",
+        "Operating System :: Unix",
+        "Programming Language :: C++",
+        "Topic :: Scientific/Engineering :: Information Analysis",
     ],
-
-    cmdclass={
-        'build': XCSoarBuild,
-        'install': XCSoarInstall,
-    }
+    cmdclass={"build": XCSoarBuild, "install": XCSoarInstall},
 )
