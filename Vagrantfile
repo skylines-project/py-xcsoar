@@ -26,7 +26,7 @@ sudo apt-get update
 # install base dependencies
 
 sudo apt-get install -y --no-install-recommends \
-    g++ pkg-config libcurl4-openssl-dev libfreetype-dev libpng-dev python-dev ccache git
+    g++ pkg-config libcurl4-openssl-dev libfreetype6-dev libpng-dev python-dev ccache git
 
 # install pip
 
