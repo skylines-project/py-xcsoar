@@ -1,28 +1,38 @@
-language: python
-
-python:
-  - "2.7"
-  - "3.4"
-
+dist: trusty
 sudo: false
 
-addons:
-  apt:
-    packages:
-      - libcurl4-openssl-dev
+branches:
+  except:
+    - /^dependabot\/.*$/
 
-install:
-  - pip install -r requirements.txt
+jobs:
+  include:
+    - &test
+      stage: test
 
-before_script:
-  - git submodule update --init --recursive
+      language: python
+      python: 2.7
 
-script:
-  # Try to install the package
-  - pip install .
+      addons:
+        apt:
+          packages:
+            - libcurl4-openssl-dev
 
-  # Run tests
-  - pytest -vv
+      install:
+        - pip install -r requirements.txt
+
+      before_script:
+        - git submodule update --init --recursive
+
+      script:
+        # Try to install the package
+        - pip install .
+
+        # Run tests
+        - pytest -vv
+
+    - <<: *test
+      python: 3.4
 
 notifications:
   email:
