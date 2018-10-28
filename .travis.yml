@@ -34,6 +34,18 @@ jobs:
     - <<: *test
       python: 3.4
 
+    - stage: test
+      env: NAME=black         # used only to make Travis UI show description
+
+      language: python
+      python: 3.6
+
+      install:
+        - pip install black==18.9b0
+
+      script:
+        - black tests *.py --check
+
 notifications:
   email:
     on_failure: change
