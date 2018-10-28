@@ -10,15 +10,6 @@ export LC_CTYPE=C
 export USE_CCACHE=y
 EOF
 
-# adjust apt-get repository URLs
-
-sudo bash -c "cat > /etc/apt/sources.list" << EOF
-deb mirror://mirrors.ubuntu.com/mirrors.txt precise main restricted universe multiverse
-deb mirror://mirrors.ubuntu.com/mirrors.txt precise-updates main restricted universe multiverse
-deb mirror://mirrors.ubuntu.com/mirrors.txt precise-backports main restricted universe multiverse
-deb mirror://mirrors.ubuntu.com/mirrors.txt precise-security main restricted universe multiverse
-EOF
-
 # update apt-get repository
 
 sudo apt-get update
@@ -41,8 +32,8 @@ sudo -H pip install -r requirements.txt
 SCRIPT
 
 Vagrant.configure("2") do |config|
-  # TravisCI uses a Precise Pangolin base image
-  config.vm.box = 'ubuntu/precise64'
+  # TravisCI uses a Trusty Tahr base image (2018-05-26)
+  config.vm.box = 'ubuntu/trusty64'
 
   config.vm.network 'private_network', type: 'dhcp'
   config.vm.synced_folder '.', '/vagrant', type: 'nfs'
