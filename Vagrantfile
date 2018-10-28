@@ -1,20 +1,13 @@
 $script = <<SCRIPT
 
+set -e
+
 # set environment variables
 
 cat >> ~/.profile << EOF
 export LANG=C
 export LC_CTYPE=C
 export USE_CCACHE=y
-EOF
-
-# adjust apt-get repository URLs
-
-sudo bash -c "cat > /etc/apt/sources.list" << EOF
-deb mirror://mirrors.ubuntu.com/mirrors.txt precise main restricted universe multiverse
-deb mirror://mirrors.ubuntu.com/mirrors.txt precise-updates main restricted universe multiverse
-deb mirror://mirrors.ubuntu.com/mirrors.txt precise-backports main restricted universe multiverse
-deb mirror://mirrors.ubuntu.com/mirrors.txt precise-security main restricted universe multiverse
 EOF
 
 # update apt-get repository
@@ -24,7 +17,7 @@ sudo apt-get update
 # install base dependencies
 
 sudo apt-get install -y --no-install-recommends \
-    g++ pkg-config libcurl4-openssl-dev libfreetype-dev libpng-dev python-dev ccache git
+    g++ pkg-config libcurl4-openssl-dev libfreetype6-dev libpng-dev python-dev ccache git
 
 # install pip
 
@@ -33,13 +26,14 @@ sudo -H python get-pip.py
 
 # install dev dependencies
 
-pip install -r requirements.txt
+cd /vagrant
+sudo -H pip install -r requirements.txt
 
 SCRIPT
 
 Vagrant.configure("2") do |config|
-  # TravisCI uses a Precise Pangolin base image
-  config.vm.box = 'ubuntu/precise64'
+  # TravisCI uses a Trusty Tahr base image (2018-05-26)
+  config.vm.box = 'ubuntu/trusty64'
 
   config.vm.network 'private_network', type: 'dhcp'
   config.vm.synced_folder '.', '/vagrant', type: 'nfs'
