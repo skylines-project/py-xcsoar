@@ -7,7 +7,6 @@ from pytest import approx
 FIXTURES_PATH = join(dirname(abspath(__file__)), "fixtures")
 
 
-@pytest.mark.skip(reason="approx() is not working as expected")
 def test_performance_and_phases():
     from xcsoar import Flight
 
@@ -1955,7 +1954,7 @@ def test_performance_and_phases():
             "circling_direction": "",
             "end_time": datetime(2016, 5, 4, 18, 59, 42),
             "duration": 760,
-            "glide_rate": 23.641366894545143,
+            "glide_rate": approx(23.641366894545143),
             "type": "cruise",
         },
     ]
