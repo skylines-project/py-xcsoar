@@ -40,7 +40,9 @@ class XCSoarBuild(build):
         else:
             target_path = "UNIX_PYTHON"
 
-        target_files = [os.path.join(build_path, target_path, "bin", "xcsoar.so")]
+        target_files = [
+            os.path.join(build_path, target_path, "opt", "bin", "xcsoar.so")
+        ]
 
         def compile():
             call(cmd, cwd=XCSOAR_PATH)
