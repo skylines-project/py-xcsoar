@@ -29,7 +29,7 @@ class XCSoarBuild(build):
         except NotImplementedError:
             print("Unable to determine number of CPUs. Using single threaded make.")
 
-        options = ["DEBUG=n", "ENABLE_SDL=n"]
+        options = ["DEBUG=n", "ENABLE_SDL=n", "LIBJPEG=n"]
         cmd.extend(options)
 
         targets = ["python"]
