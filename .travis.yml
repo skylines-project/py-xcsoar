@@ -12,7 +12,6 @@ jobs:
 
       language: python
       python: 2.7
-      env: PYTHON_TAG=py27
 
       addons:
         apt:
@@ -34,7 +33,6 @@ jobs:
 
     - <<: *test
       python: 3.4
-      env: PYTHON_TAG=py34
 
     - stage: test
       env: NAME=black         # used only to make Travis UI show description
@@ -54,7 +52,7 @@ notifications:
 
 deploy:
   provider: pypi
-  distributions: "sdist bdist_wheel --python-tag=${PYTHON_TAG} --plat-name=linux_x86_64"
+  distributions: "sdist"
   skip_cleanup: true
   user: Tobias.Bieniek
   password:
