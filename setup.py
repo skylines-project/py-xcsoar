@@ -80,7 +80,7 @@ def read(fname):
 
 setup(
     name="xcsoar",
-    version="0.6.3",
+    version="0.6.4",
     description="XCSoar flight analysis tools",
     maintainer="Tobias Bieniek",
     maintainer_email="tobias.bieniek@gmx.de",

@@ -1,6 +1,14 @@
 CHANGELOG
 =========
 
+0.6.4
+-----
+
+- Disable binary wheel distribution
+- Remove unnecessary freetype and libpng requirements
+- Exclude boost docs and tests from source distribution
+
+
 0.6.3
 -----
 
