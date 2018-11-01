@@ -54,7 +54,7 @@ notifications:
 
 deploy:
   provider: pypi
-  distributions: "sdist bdist_wheel --python-tag=${PYTHON_TAG}"
+  distributions: "sdist bdist_wheel --python-tag=${PYTHON_TAG} --plat-name=linux_x86_64"
   skip_cleanup: true
   user: Tobias.Bieniek
   password:
