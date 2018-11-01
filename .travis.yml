@@ -17,6 +17,7 @@ jobs:
         apt:
           packages:
             - libcurl4-openssl-dev
+            - python3.5-dev
 
       install:
         - pip install -r requirements.txt
@@ -33,6 +34,9 @@ jobs:
 
     - <<: *test
       python: 3.4
+
+    - <<: *test
+      python: 3.5
 
     - stage: test
       name: "Linting (black)"
