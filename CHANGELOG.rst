@@ -1,6 +1,12 @@
 CHANGELOG
 =========
 
+0.6.3
+-----
+
+- Fix wheel compatibility tags
+
+
 0.6.2
 -----
 
