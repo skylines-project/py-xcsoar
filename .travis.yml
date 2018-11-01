@@ -34,6 +34,15 @@ jobs:
     - <<: *test
       python: 3.4
 
+    - <<: *test
+      python: 3.5
+
+    - <<: *test
+      python: 3.6
+
+    - <<: *test
+      python: 3.7
+
     - stage: test
       env: NAME=black         # used only to make Travis UI show description
 
