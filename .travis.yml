@@ -35,7 +35,7 @@ jobs:
       python: 3.4
 
     - stage: test
-      env: NAME=black         # used only to make Travis UI show description
+      name: "Linting (black)"
 
       language: python
       python: 3.6
