@@ -27,5 +27,20 @@ prune xcsoar.submodule/src/UIUtil
 prune xcsoar.submodule/src/Widget
 graft xcsoar.submodule/python
 graft xcsoar.submodule/test/src
-graft xcsoar.submodule/lib/boost
 include xcsoar.submodule/tools/GenerateSineTables.cpp
+
+# boost
+graft xcsoar.submodule/lib/boost/assert/include
+graft xcsoar.submodule/lib/boost/config/include
+graft xcsoar.submodule/lib/boost/core/include
+graft xcsoar.submodule/lib/boost/detail/include
+graft xcsoar.submodule/lib/boost/function_types/include
+graft xcsoar.submodule/lib/boost/functional/include
+graft xcsoar.submodule/lib/boost/integer/include
+graft xcsoar.submodule/lib/boost/intrusive/include
+graft xcsoar.submodule/lib/boost/move/include
+graft xcsoar.submodule/lib/boost/mpl/include
+graft xcsoar.submodule/lib/boost/preprocessor/include
+graft xcsoar.submodule/lib/boost/static_assert/include
+graft xcsoar.submodule/lib/boost/tti/include
+graft xcsoar.submodule/lib/boost/type_traits/include
