@@ -1,4 +1,5 @@
-dist: trusty
+dist: bionic
+
 branches:
   except:
     - /^dependabot\/.*$/
