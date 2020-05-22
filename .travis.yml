@@ -32,10 +32,7 @@ jobs:
         - pytest -vv
 
     - <<: *test
-      python: 3.4
-
-    - <<: *test
-      python: 3.5
+      python: 3.6
 
     - stage: test
       name: "Linting (black)"
