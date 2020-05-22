@@ -1,6 +1,15 @@
 CHANGELOG
 =========
 
+0.7.0
+-----
+
+- Update to XCSoar v6.8.14
+  - Add support for long-form `HFDTE` records in IGC files
+- Add support for Python 3.6
+- Drop support for Python 3.4 and 3.5
+
+
 0.6.4
 -----
 
